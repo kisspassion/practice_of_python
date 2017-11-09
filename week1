@@ -16,7 +16,7 @@ for i in range(1,10):
     print('')
 # 4.阶乘计算
 sum, tmp = 0, 1
-for i in range(1,11)
+for i in range(1,11):
     tmp *= i
     sum += tmp
 print("运算结果是：{}".format(sum))
@@ -36,7 +36,7 @@ for x in range(0,5):
 from turtle import *
 fillcolor("red")
 begin_fill()
-while true:
+while True:
     forward(200)
     right(144)
     if abs(pos()) < 1:
@@ -46,10 +46,10 @@ end_fill()
 from turtle import *
 color('red','yellow')
 begin_fill()
-while true:
+while True:
     forward(200)
     left(170)
-    if abs(pos()) < 1
+    if abs(pos()) < 1:
         break
 end_fill()
 done()
@@ -58,7 +58,7 @@ import turtle
 import time
 turtle.speed("fastest")
 turtle.pensize(2)
-for x in range(100)
+for x in range(100):
     turtle.forward(2*x)
     turtle.left(90)
 time.speed(3)
