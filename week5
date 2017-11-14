@@ -1,0 +1,6 @@
+第五周python编程之代码复用
+turtle库
+url=https://docs.python.org/3.6/library/turtle.html
+函数的定义：
+def <name>(<parameters>):
+    <body>
