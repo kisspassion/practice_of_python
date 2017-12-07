@@ -1,0 +1,28 @@
+#numpy
+#基础
+#ndarray,即数组。ndarray的对象属性如下
+from numpy import *
+a = arange(15).reshape(3,5)
+print(a)
+print(a.shape)
+print(a.ndim)
+print(a.dtype.name)
+print(a.itemsize)
+print(type(a))
+#创建数组法1
+b = array([2, 3, 4])
+print(a)
+#错误示范：用多个数值参数调用array
+#正确方法：提供一个由数值组成的列表作为参数
+#
+c = array([[1, 2], [3, 4]], dtype = complex)
+print(c)
+#创建数组法2
+a1 = zeros((3,4))
+a2 = ones((2, 3, 4),dtype = int16)
+random3 = empty((2,3))
+print(a1,a2,random3)
+#创建数组法3
+b1 = arange(10,30,5)
+b2 = arange(0,2,0.3)
+print(b1,b2)
