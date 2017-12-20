@@ -22,3 +22,23 @@ eval()官方文档解释为：
 eval(expression, globals=None, locals=None)
 The arguments are a string and optional globals and locals. 
 If provided, globals must be a dictionary. If provided, locals can be any mapping object.
+
+>>> x = 1
+>>> eval('x+1')
+2
+
+#test eval() and locals()
+x = 1
+y = 1
+num1 = eval("x+y")
+print (num1)
+def g():  
+  x = 2 
+  y = 2 
+  num3 = eval("x+y") 
+  print (num3)    
+  num2 = eval("x+y",globals())  
+ # num2 = eval("x+y",globals(),locals()) 
+  print (num2)
+g()
+num3是4，num2是2，因为num2中，x，y是globals全局变量。
