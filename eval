@@ -1,0 +1,24 @@
+#20171220学习记录
+
+问题：
+编写一个程序，计算输入数字N的0次方到5次方结果，并依次输出这6个结果，输出结果间用空格分隔。其中：N是一个整数或浮点数。
+a = input()
+print(a**0, a**1, a**2, a**3, a**4, a**5)
+此时运行会报错，因为a是str型，而**幂次操作不支持str型，只支持数字类型如int，float
+因输入内容可能为int也可能为float，a = int(input())和a = float(input())都不能同时满足需求
+
+百度后发现使用eval()可以解决
+
+eval()
+a = eval(input())
+b = input()
+eval()可以自动转换输入内容的格式，如输入1.2，a就是float型，输入2，a就是int型
+无论b的输入是1.2还是2，b都是str型
+
+原理是：
+eval函数将字符串当成有效Python表达式来求值，并返回计算结果
+
+eval()官方文档解释为：
+eval(expression, globals=None, locals=None)
+The arguments are a string and optional globals and locals. 
+If provided, globals must be a dictionary. If provided, locals can be any mapping object.
