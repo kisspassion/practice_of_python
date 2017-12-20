@@ -42,3 +42,18 @@ def g():
   print (num2)
 g()
 num3是4，num2是2，因为num2中，x，y是globals全局变量。
+
+z=0
+def f():
+    z = 1
+    print (locals())
+    locals()["z"] = 2
+    print (locals())
+f()
+globals()["z"] = 2
+print (z)
+输出结果：
+{'z': 1}
+{'z': 1}
+2
+locals()变量不可修改，但是globals()变量可以修改。
