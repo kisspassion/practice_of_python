@@ -1,0 +1,57 @@
+正则表达式，参考：http://www.runoob.com/python/python-reg-expressions.html
+re.sub()函数，参考：https://docs.python.org/3/library/re.html?highlight=re%20sub#re.sub
+题目：
+货币转换 C
+描述
+
+人民币和美元是世界上通用的两种货币之一，写一个程序进行货币间币值转换，其中：
+
+人民币和美元间汇率固定为：1美元 = 6.78人民币。
+
+程序可以接收人民币或美元输入，转换为美元或人民币输出。人民币采用￥符号或RMB表示，美元采用$或USD表示，符号和数值之间没有空格。
+
+注意：
+
+(1) 人民币和美元间符号在转换中要对等，￥和$相互对应，RMB和USD相互对应，输出结果保留小数点后两位；
+
+(2) 符号在数字的后面；
+
+(3) 这是一个OJ题目，获得输入请使用input() 。
+
+========================================
+不会的点在于获取输入后，如何在获取的str中，提取货币的金额，即在string中提取数字
+import re
+#money = input()
+money = '66.5USD'
+moneynum = re.sub(r'\D+\.?\D', '', money)
+print(moneynum)
+#66.5
+phone = "2004-959-559 # 这是一个国外电话号码"
+# 删除字符串中的 Python注释
+num = re.sub(r'#.*$', "", phone)
+print("电话号码是: ", num)
+#电话号码是:  2004-959-559 
+# 删除非数字(-)的字符串
+num = re.sub(r'\D', "", phone)
+print("电话号码是: ", num)
+#电话号码是:  2004959559
+========================================
+money = input()
+if '$' in money:
+    moneyhange = float(money[:-1])*6.78
+    moneytype = '￥'
+elif 'USD'in money:
+    moneyhange = float(money[:-3])*6.78
+    moneytype = 'RMB'
+elif '￥' in money:
+    moneyhange = float(money[:-1])/6.78
+    moneytype = '$'
+elif 'RMB' in money:
+    moneyhange = float(money[:-3])/6.78
+    moneytype = 'USD'
+pt = '%.2f'%moneyhange+moneytype
+print(pt)
+
+格式化输出
+'%.2f'%p
+p= 3.336时，输出3.33
