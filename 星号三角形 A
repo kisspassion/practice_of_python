@@ -1,0 +1,7 @@
+N = eval(input())
+linenum = int((N+1)/2)
+for i in range(linenum):
+  L = '*'*(2*i+1)
+  Lfront = ' '*(linenum-i-1)
+  print(Lfront+L+Lfront)
+
